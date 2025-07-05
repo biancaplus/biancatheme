@@ -333,16 +333,16 @@ h1 {
         height: 150px;
         border-radius: 10px;
         overflow: hidden;
-        transform: scale(1);
-        transition: all 0.5s ease-in-out;
-        &:hover {
-          transform: scale(1.05);
-        }
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transform: scale(1);
+          transition: all 0.8s ease-in-out;
+          &:hover {
+            transform: scale(1.15);
+          }
         }
       }
 
@@ -545,7 +545,7 @@ h1 {
       color: #2c3e50;
       -webkit-font-smoothing: antialiased;
       .wp-block-image {
-        margin-bottom: 15px;
+        margin: 15px 0;
       }
       pre {
         border-radius: 5px;
@@ -560,6 +560,14 @@ h1 {
             Consolas, "Courier New", monospace;
           font-size: 16px;
         }
+      }
+      code:not([class]) {
+        color: #eb5757;
+        background-color: #ededeb;
+        padding: 3px 4px;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: bold;
       }
       a {
         // color: inherit;
@@ -613,9 +621,12 @@ h1 {
         tr:nth-child(odd) {
           background-color: #f9f9f9;
         }
+        tr:nth-child(even) {
+          background-color: #fff;
+        }
       }
       .has-small-font-size {
-        font-size: 15px;
+        font-size: 15px !important;
       }
 
       .size-full img {
@@ -625,6 +636,13 @@ h1 {
       .is-resized img {
         max-width: 100% !important;
         height: auto !important;
+      }
+      .is-border {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .is-radius {
+        border-radius: 10px;
+        overflow: hidden;
       }
       .aligncenter {
         text-align: center;

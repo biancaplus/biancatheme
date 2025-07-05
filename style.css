@@ -381,15 +381,6 @@ h1 {
   height: 150px;
   border-radius: 10px;
   overflow: hidden;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.site-main .cards-wrap .card .card-img:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 .site-main .cards-wrap .card .card-img img {
@@ -397,6 +388,15 @@ h1 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.site-main .cards-wrap .card .card-img img:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .site-main .cards-wrap .card .card-title a {
@@ -629,7 +629,7 @@ h1 {
 }
 
 .site-main.single-page .single-content .article-content .wp-block-image {
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .site-main.single-page .single-content .article-content pre {
@@ -645,6 +645,15 @@ h1 {
   background: #f8f9fa;
   font-family: "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 16px;
+}
+
+.site-main.single-page .single-content .article-content code:not([class]) {
+  color: #eb5757;
+  background-color: #ededeb;
+  padding: 3px 4px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .site-main.single-page .single-content .article-content a {
@@ -713,8 +722,12 @@ h1 {
   background-color: #f9f9f9;
 }
 
+.site-main.single-page .single-content .article-content table tr:nth-child(even) {
+  background-color: #fff;
+}
+
 .site-main.single-page .single-content .article-content .has-small-font-size {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 
 .site-main.single-page .single-content .article-content .size-full img {
@@ -725,6 +738,15 @@ h1 {
 .site-main.single-page .single-content .article-content .is-resized img {
   max-width: 100% !important;
   height: auto !important;
+}
+
+.site-main.single-page .single-content .article-content .is-border {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-main.single-page .single-content .article-content .is-radius {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .site-main.single-page .single-content .article-content .aligncenter {

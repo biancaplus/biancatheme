@@ -59,6 +59,25 @@ add_action( 'after_setup_theme', 'bianca_setup' );
 // }
 // add_action('pre_get_posts', 'custom_modify_main_query',999);
 
+// 设置列表页每页显示条数、搜索页排序
+add_action('pre_get_posts', function ($query) {
+    // 管理员后台、非主查询不执行
+    if (is_admin() || !$query->is_main_query()) return;
+
+    if ($query->is_archive() || $query->is_home() || $query->is_search()) {
+        error_log('Setting posts_per_page to 12 for: ' . print_r($query, true));
+        $query->set('posts_per_page', 12);
+    }
+
+    // if ($query->is_search()) {
+    //     $query->set('orderby', 'date');
+    //     $query->set('order', 'DESC');
+    // }
+});
+
+    
+
+
 // 记录文章浏览数
 function set_post_views($post_id) {
     $countKey = 'views';
